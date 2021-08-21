@@ -1,0 +1,46 @@
+
+Pre ->JAVA SCRIPT -->
+
+REACT JS  -->top library of js			
+
+			Framework              Library	
+
+ framework is pre define architure and built on exisiting tech/lang and we have to just re use this !!!!
+
+	
+
+ library :-collection of pre define module...				
+
+	React js : library,Facebook
+	Angular js : framework ,spring,hibernate,...
+
+ ----------------------------------------------------------
+ Modules :- Packege  .... collection of class...
+
+ ------------------------------------------------------------
+ 
+	monolotic architure ,modulor architure.....
+
+	AOP  ---> Bank , {
+				withdraw,deposit,
+				logs,auth,autho,otp,sms....
+			}
+--------------------------------------------------------------
+
+NPM :-Node package module ...
+	system ...
+
+NPX :-node package execute ...
+	
+
+---------------------------------------------------------------
+
+node install , visual studio code...
+----------------------------------
+
+npx create-react-app yourappname
+
+JSX  ---> java script xml --> HTML 
+
+jsp --> html + java
+JSX  html + jsx
