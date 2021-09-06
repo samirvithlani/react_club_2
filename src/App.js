@@ -15,14 +15,19 @@ import { UserList } from './api/UserList';
 import { UserDetail } from './api/User-Detail';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
+import { createContext } from 'react'
+import { Child } from './Child';
+import { SearchMovie } from './movie/SearchMovie';
 
 
+export const GlobalInfo = createContext();
 
 function App() {
 
   const [users, setusers] = useState([])
   const [error, setError] = useState(null)
   const [isLoading, setisLoading] = useState(false)
+  const [resData, setresData] = useState('')
 
   // function fetchUserData() {
 
@@ -59,11 +64,29 @@ function App() {
 
     const resData = await res.json();
     //data added....
-    toast.success("data addedd...",{
-      position:toast.POSITION.TOP_CENTER
+    toast.success("data addedd...", {
+      position: toast.POSITION.TOP_CENTER
     })
     console.log(resData)
 
+
+  }
+  async function login() {
+
+    var logindata = {
+      email: "eve.holt@reqres.in",
+      password: "cityslicka"
+    }
+
+    const res = await fetch('https://reqres.in/api/login', {
+      method: 'POST',
+      body: JSON.stringify(logindata),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    const resData = res.json();
+    setresData(resData)
 
   }
 
@@ -72,7 +95,7 @@ function App() {
     try {
 
       setisLoading(true)
-      const res = await fetch('https://reqres.in/api/users/23')
+      const res = await fetch('https://reqres.in/api/users?page=2')
       const data = await res.json();
       setusers(data.data)
       setisLoading(false)
@@ -95,31 +118,17 @@ function App() {
 
 
 
+  const [mycolor, setcolor] = useState('blue')
   return (
 
     <div>
-      <button className="btn btn-primary" onClick={fetchUserData1}>FETCH DATA</button>
-      <button className="btn btn-primary" onClick={addUser}>adD DATA</button>
-
-      <ToastContainer />
-      <Route path="/" exact>
-        {
-          !isLoading && users != undefined && users.length > 0 && <UserList users={users} />
-        }
-
-        {
-          isLoading && <p>Loading !!!</p>
-        }
-        {
-          !isLoading && error && <p>{error}</p>
-        }
-
-      </Route>
-      <Route path="/user/:id">
-        <UserDetail />
-      </Route>
+      <SearchMovie/>
     </div>
+    // <GlobalInfo.Provider value={{ color: mycolor }}>
 
+    //   <h1 style={{ color: mycolor }}>APP JS</h1>
+    //   <Child/>
+    // </GlobalInfo.Provider>
   )
 }
 
