@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Header } from './MyComponents/Header';
+import { Header } from './storage/Header'
 import { EmployeeList } from './MyComponents/EmployeeList';
 import { Footer } from './MyComponents/Footer';
 import { useState } from 'react'
@@ -18,6 +18,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import { createContext } from 'react'
 import { Child } from './Child';
 import { SearchMovie } from './movie/SearchMovie';
+import { Login } from './storage/Login';
+import { FileUploader } from './fileUploading/FileUploader';
 
 
 export const GlobalInfo = createContext();
@@ -121,8 +123,14 @@ function App() {
   const [mycolor, setcolor] = useState('blue')
   return (
 
-    <div>
-      <SearchMovie/>
+    <div className="container mt-3">
+      {/* <SearchMovie/> */}
+      {/* <Header />
+
+      
+      <Login /> */}
+
+      <FileUploader/>
     </div>
     // <GlobalInfo.Provider value={{ color: mycolor }}>
 
