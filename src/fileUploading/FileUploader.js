@@ -8,10 +8,16 @@ export const FileUploader = () => {
 
     const [singleFile, setsingleFile] = useState('')
     const [singleFileProgress, setsingleFileProgress] = useState('')
+    const [multiFile, setmultiFile] = useState([])
 
     const singleFileChange = (e) => {
 
         setsingleFile(e.target.files[0])
+    }
+    
+    const multiFileChange = (e) => {
+
+        setmultiFile(e.target.files)
     }
 
     const singleFileOption = {
@@ -28,6 +34,12 @@ export const FileUploader = () => {
     const uploadSingleFile = () => {
 
         callApi(singleFile,singleFileOption)
+
+
+    }
+    const uploadMultiFile = () => {
+
+        console.warn(multiFile)
 
 
     }
@@ -53,6 +65,20 @@ export const FileUploader = () => {
                 <div className="row">
                     <div className="col-10">
                         <button className="btn btn-success" onClick={uploadSingleFile}>UPLOAD</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div className="col-6">
+                <h1>MULLTIPULE</h1>
+                <div className="form-group">
+                    <label>Choose File</label>
+                    <input type="file" className="form-control" onChange={(e) => { multiFileChange(e) }} multiple></input>
+                </div>
+                <div className="row">
+                    <div className="col-10">
+                        <button className="btn btn-success" onClick={uploadMultiFile}>UPLOAD</button>
                     </div>
                 </div>
 

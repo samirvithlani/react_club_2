@@ -44,3 +44,5 @@ JSX  ---> java script xml --> HTML
 
 jsp --> html + java
 JSX  html + jsx
+
+https://medium.com/@svibhuti22/file-upload-with-multer-in-node-js-and-express-5bc76073419f

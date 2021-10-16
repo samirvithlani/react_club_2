@@ -20,6 +20,8 @@ import { Child } from './Child';
 import { SearchMovie } from './movie/SearchMovie';
 import { Login } from './storage/Login';
 import { FileUploader } from './fileUploading/FileUploader';
+import { Forms } from './forms1/Forms';
+import { Forms2 } from './forms1/Forms2';
 
 
 export const GlobalInfo = createContext();
@@ -130,7 +132,9 @@ function App() {
       
       <Login /> */}
 
-      <FileUploader/>
+      {/* <FileUploader/> */}
+      <Forms2/>
+
     </div>
     // <GlobalInfo.Provider value={{ color: mycolor }}>
 
