@@ -22,6 +22,7 @@ import { Login } from './storage/Login';
 import { FileUploader } from './fileUploading/FileUploader';
 import { Forms } from './forms1/Forms';
 import { Forms2 } from './forms1/Forms2';
+import { DynamicForm } from './forms1/DynamicForm';
 
 
 export const GlobalInfo = createContext();
@@ -133,7 +134,7 @@ function App() {
       <Login /> */}
 
       {/* <FileUploader/> */}
-      <Forms2/>
+      <DynamicForm/>
 
     </div>
     // <GlobalInfo.Provider value={{ color: mycolor }}>
